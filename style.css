@@ -1,38 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('istockphoto-1357255073-612x612.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
+/* style.css */
+:root{
+  --bg: #eaf6f2;
+  --card: #ffffff;
+  --accent: #2a7f62;
+  --muted: #6c7a72;
+  --radius: 14px;
+  --max-width: 720px;
 }
-</style>
-</head>
-<body>
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    Logo
-  </div>
-  <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">35 days left</p>
-  </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-  </div>
-</div>
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; font-family: 'Poppins', sans-serif; background:var(--bg); color:#222; }
 
-</body>
-</html>
+.container { max-width: var(--max-width); margin: 24px auto; padding: 0 16px; }
+
+header { text-align:center; padding: 16px 0; }
+header h1 { margin:0; color:var(--accent); font-weight:600; }
+.tagline { margin:6px 0 0; color:var(--muted); font-weight:300; }
+
+#quote-box {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+#quote-box p { margin: 0; font-size: 1.25rem; line-height:1.4; }
+
+.controls { margin-top: 12px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+button { border: none; padding: 10px 16px; border-radius: 10px; cursor:pointer; font-weight:600; }
+#new-quote { background: var(--accent); color: #fff; }
+#share-quote { background: #f3f3f3; color: #222; }
+
+.mood-buttons { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin:10px 0; }
+.mood { background:#fff; padding:8px 12px; border-radius:8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+
+#tips-list { list-style:none; padding:0; margin:12px auto; max-width:600px; }
+#tips-list li { background:#fff; margin:8px 0; padding:10px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.04); }
+
+#user-quote { margin:18px 0; display:flex; gap:8px; justify-content:center; align-items:center; flex-wrap:wrap; }
+#user-quote-input { padding: 8px; border-radius: 8px; border: 1px solid #ddd; width:60%; min-width:200px; }
+
+button:focus, input:focus { outline: 3px solid rgba(42,127,98,0.15); outline-offset: 2px; }
+
+@media (max-width:480px){
+  #quote-box p { font-size: 1.05rem; }
+  #user-quote-input { width:100%; }
+}
+
 
