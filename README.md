@@ -1,7 +1,7 @@
 # wics-hackathon
 This is our group's repo for creating a app for the WICS Hackathon 2025
 
-#MindLift :herb:
+# MindLift :herb:
 MindLift is a mental health app that uses cognitive behavioral therapy (CBT) techniques to help users manage their mental health. The app provides users with a variety of tools and resources to help them identify and challenge negative thought patterns, develop coping skills, and improve their overall well-being.</p>
 
 Key Features:
