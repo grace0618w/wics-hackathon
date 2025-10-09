@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MindLift - Motivation</title>
   <link rel="stylesheet" href="style.css">
+  <script src = "script.js" defer></script>
 </head>
 <body>
   <header>
@@ -13,14 +14,30 @@
   </header>
 
   <main>
+    <!-- Feeling Selection Area -->
+    <div id="feeling-selection">
+      <h2>How are you feeling today?</h2>
+      <button class="feeling-btn" data-feeling="happy">😊 Happy</button>
+      <button class="feeling-btn" data-feeling="sad">😢 Sad</button>
+      <button class="feeling-btn" data-feeling="angry">😠 Angry</button>
+      <button class="feeling-btn" data-feeling="anxious">😰 Anxious</button>
+    </div>
+
+  <main>
     <!-- Quote Display Area -->
     <div id="quote-box">
       <p id="quote-text">Click below to see your quote!</p>
+      <p id="quote-author"></p>
+      <p id="quote-movie"></p>
     </div>
 
     <!-- Button to Get New Quote -->
     <button id="new-quote">Show New Quote</button>
+
+
   </main>
+
+  
 
   <footer>
     <p>Made with 💛 by Team MindLift</p>

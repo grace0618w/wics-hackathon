@@ -6,6 +6,8 @@ console.log('script loaded');
 
 // feelings: happy, sad, angry, anxious
 
+let lastFeeling = null;
+
 const happyQuotes = [
     {text: "Our fate lives within us. You only have to be brave enough to see it.", author: "Merida", movie: "Brave"},
     {text: "Happiness is the richest thing we will ever own.", author: "Donald Duck", movie: "Mickey's Once Upon a Christmas"}
@@ -51,8 +53,7 @@ function selectQuote(feeling) {
             quotesArray = anxiousQuotes;
             break;
         default:
-            console.error('Unknown feeling:', feeling);
-            return null;
+            quotesArray = anxiousQuotes;
     }
     const randomIndex = Math.floor(Math.random() * quotesArray.length);
     return quotesArray[randomIndex];
@@ -62,14 +63,37 @@ let quote, text, author, movie;
 
 function displayQuote(feeling) {
     quote = selectQuote(feeling);
-    text = quote.text;
-    author = quote.author;
-    movie = quote.movie;
+
+    const text = document.getElementById('quote-text');
+    const author = document.getElementById('quote-author');
+    const movie = document.getElementById('quote-movie');
+
+    const textContent = `"${quote.text}"`;
+    const authorContent = `- ${quote.author}`;
+    const movieContent = `(${quote.movie})`;
+
+    lastFeeling = feeling;
 };
 
-// Example usage:
-displayQuote('anxious');
-currentText = text;
-currentAuthor = author;
-currentMovie = movie;
+// // Example usage:
+// displayQuote('anxious');
+// currentText = text;
+// currentAuthor = author;
+// currentMovie = movie;
 
+document.addEventListener('DOMContentLoaded', () => {
+    const feelingButtons = document.querySelectorAll('.feeling-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const feeling = button.dataset.feeling;
+            displayQuote(feeling);
+        });
+    });
+});
+
+const newQuoteButton = document.getElementById('new-quote');
+if (newQuoteButton) {
+    newQuoteButton.addEventListener('click', () => {
+        displayQuote('anxious'); // Default to anxious if no feeling is selected
+    });
+
+};
