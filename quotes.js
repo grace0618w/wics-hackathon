@@ -68,9 +68,10 @@ function displayQuote(feeling) {
     const author = document.getElementById('quote-author');
     const movie = document.getElementById('quote-movie');
 
-    const textContent = `"${quote.text}"`;
-    const authorContent = `- ${quote.author}`;
-    const movieContent = `(${quote.movie})`;
+    text.textContent = `"${quote.text}"`;
+    author.textContent = `- ${quote.author}`;
+    movie.textContent = `(${quote.movie})`;
+
 
     lastFeeling = feeling;
 };
