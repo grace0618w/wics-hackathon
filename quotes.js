@@ -58,5 +58,18 @@ function selectQuote(feeling) {
     return quotesArray[randomIndex];
 }
 
+let quote, text, author, movie;
 
+function displayQuote(feeling) {
+    quote = selectQuote(feeling);
+    text = quote.text;
+    author = quote.author;
+    movie = quote.movie;
+};
+
+// Example usage:
+displayQuote('anxious');
+currentText = text;
+currentAuthor = author;
+currentMovie = movie;
 
